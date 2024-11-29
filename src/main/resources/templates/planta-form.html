@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Cliente</title>
+  <!-- Enlaces a los archivos CSS de Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="static/css/formularios.css" th:href="@{/css/formularios.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.pexels.com/photos/16845285/pexels-photo-16845285/free-photo-of-bee-on-rapeseed.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+      background-size: cover;
+      color: #1d1f21;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      /* Asegura que el cuerpo ocupe al menos la altura de la ventana */
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="sb-topnav navbar navbar-expand-lg shadow">
+    <div class="container-fluid">
+      <!-- Logo centrado -->
+
+
+      <!-- Menú de navegación -->
+      <div class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-light rounded-pill d-flex align-items-center px-3" th:href="@{/}">
+            <i class="bi bi-box-arrow-right me-2"></i>
+            <span>Salir</span>
+          </a>
+        </li>
+      </div>
+    </div>
+  </nav>
+  <div class="back container">
+    <h2 class="mt-4 mb-4">Formulario de Registro de Planta</h2>
+    <div>
+      <form id="registrationForm" th:action="@{/administrador/planta/save}" th:object="${planta}" method="post">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="id">ID:</label>
+            <input th:field="*{id}" type="text" class="form-control" id="id" name="id" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="nomCientifico">Nombre Científico:</label>
+            <input th:field="*{nomCientifico}" type="text" class="form-control" id="nomCientifico" name="nomCientifico"
+              required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="nomComun">Nombre Común:</label>
+            <input th:field="*{nomComun}" type="text" class="form-control" id="nomComun" name="nomComun" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="imagen">Imagen (URL):</label>
+            <input th:field="*{imagen}" type="text" class="form-control" id="imagen" name="imagen" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="familia">Familia:</label>
+            <input th:field="*{familia}" type="text" class="form-control" id="familia" name="familia" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="origen">Origen:</label>
+            <input th:field="*{origen}" type="text" class="form-control" id="origen" name="origen" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="distribucion">Distribución:</label>
+            <input th:field="*{distribucion}" type="text" class="form-control" id="distribucion" name="distribucion"
+              required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="adaptacion">Adaptación:</label>
+            <input th:field="*{adaptacion}" type="text" class="form-control" id="adaptacion" name="adaptacion" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="madurez">Madurez:</label>
+            <input th:field="*{madurez}" type="text" class="form-control" id="madurez" name="madurez" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="altitud">Altitud:</label>
+            <input th:field="*{altitud}" type="text" class="form-control" id="altitud" name="altitud" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="fotoperiodo">Fotoperiodo:</label>
+            <input th:field="*{fotoperiodo}" type="text" class="form-control" id="fotoperiodo" name="fotoperiodo"
+              required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="radiacion">Radiación:</label>
+            <input th:field="*{radiacion}" type="text" class="form-control" id="radiacion" name="radiacion" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="temperatura">Temperatura:</label>
+            <input th:field="*{temperatura}" type="text" class="form-control" id="temperatura" name="temperatura"
+              required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="precipitacion">Precipitación:</label>
+            <input th:field="*{precipitacion}" type="text" class="form-control" id="precipitacion" name="precipitacion"
+              required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="humedad">Humedad:</label>
+            <input th:field="*{humedad}" type="text" class="form-control" id="humedad" name="humedad" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="textura">Textura:</label>
+            <input th:field="*{textura}" type="text" class="form-control" id="textura" name="textura" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="drenaje">Drenaje:</label>
+            <input th:field="*{drenaje}" type="text" class="form-control" id="drenaje" name="drenaje" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="ph">pH:</label>
+            <input th:field="*{ph}" type="text" class="form-control" id="ph" name="ph" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Guardar Planta</button>
+      </form>
+    </div>
+    <div>
+      <button th:onclick="|history.back()|" class="btn btn-primary mt-3"
+        style="background-color: #3d833a;  border-color: #3d833a;">Volver a la
+        página anterior</button>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light text-center">
+    <p class="mb-0">&copy; 2024 WikiPlant. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- jQuery, Popper.js, Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
