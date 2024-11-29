@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botanic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/WEBMVC/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/128/628/628324.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: linear-gradient(90deg, #6aa84f, #3c763d);
+      color: white;
+      padding: 20px 0;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: #3c763d;
+    }
+
+    .navbar a:hover {
+      color: #6aa84f;
+    }
+
+    .hero {
+      background: url('https://www.cali.gov.co/gobierno/publicaciones/181974/el-jardin-botanico-de-cali-un-oasis-de-biodiversidad-esencial-para-la-cop16/info/principal/media/pubInt/thumbs/thpub_700X400_181974.jpg') no-repeat center center / cover;
+      color: rgb(88, 255, 171);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+    }
+
+    .services img {
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .services img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #3c763d;
+      color: white;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: #6aa84f;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container text-center">
+      <h1>Botanic</h1>
+      <p>Sembramos Oportunidades, Nutrición, Riqueza Botánica</p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Botanic</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/nosotros}"><i class="fas fa-users"></i> Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/servicios}"><i class="fas fa-concierge-bell"></i>
+              Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/administrador/login}"><i class="fas fa-user-shield"></i>
+              Admin</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/cliente/login}"><i class="fas fa-user"></i> Cliente</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/contactenos}"><i class="fas fa-envelope"></i>
+              Contáctenos</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/Botanic}"><i class="fas fa-envelope"></i> Botanic</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="container">
+      <h1>Bienvenido a Botanic</h1>
+    </div>
+  </section>
+
+  <section class="services py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Descubre lo que ofrecemos</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <img src="https://caracol.com.co/resizer/v2/HT3KXNFWZ5G7NBAYG3BDXUQNLA.png?auth=e8a4d7c0136fe16fecb3ff13fb790482304017a49de5dd3a30576f7f0053415c&width=650&height=488&quality=70&smart=true" alt="Plantas"
+            class="img-fluid">
+          <h3 class="mt-3">Plantas de Alta Calidad</h3>
+          <p>Descubre nuestra amplia variedad de plantas de alta calidad.</p>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="https://www.wradio.com.co/resizer/v2/BTWGGWJ3XZAXJEWQXHKNG2SGZ4.jpg?auth=130be8c03e885d1a847d057ac2db49bad14726e964ac09cae2822c4708d0fe4b&width=1440&height=810&quality=70&smart=true"
+            alt="Semillas" class="img-fluid">
+          <h3 class="mt-3">Semillas Especializadas</h3>
+          <p>Explora nuestras semillas para cultivar tus propios alimentos.</p>
+        </div>
+        <div class="col-md-4">
+          <img
+            src="https://img.freepik.com/vector-premium/iconos-jardin-vivero-isometrico-plantas-arboles-macetas-ilustraciones-vectoriales-aisladas_1284-77776.jpg?w=826"
+            alt="Servicios" class="img-fluid">
+          <h3 class="mt-3">Servicios Personalizados</h3>
+          <p>Conoce nuestros servicios diseñados para tus necesidades de jardinería.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2024 Botanic. Todos los derechos reservados.</p>
+      <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
